@@ -33,7 +33,7 @@
     do {
       rn = Math.floor(Math.random() * (countryList.length + 1 - 0)) + 0;
 
-      if (coinflip == 1) {
+      if (coinflip === 1) {
         testedWord = countryList[rn].name;
       } else {
         testedWord = countryList[rn].capital;
@@ -95,7 +95,7 @@
       // Code found here: https://stackoverflow.com/questions/12778083/regex-with-space-and-letters-only
       // ...And edited here: https://www.regextester.com/95029
       !/[^A-ZÅÄÖa-zåäö ]+/.test(input) &&
-      input.length == 1 &&
+      input.length === 1 &&
       input !== ' '
     ) {
       if (!guesses.includes(input.toUpperCase())) {
@@ -106,14 +106,14 @@
           wrongGuesses = [...wrongGuesses, input.toUpperCase()];
           amountOfWrongGuesses++;
 
-          if (amountOfWrongGuesses == 11) {
+          if (amountOfWrongGuesses === 11) {
             openModal('You lost!', 'red');
           }
         } else {
           // Correct guess. The correct letter is removed from the array that contains one of each letter.
           testingArray = testingArray.filter((a) => a !== input.toUpperCase());
 
-          if (testingArray.length == 0) {
+          if (testingArray.length === 0) {
             openModal('You won!', 'green');
           }
         }
