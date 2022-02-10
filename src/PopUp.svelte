@@ -21,7 +21,7 @@
       {#if coinflip == 1}
         <p>{wordToBeGuessed} is a country in {extraInfo.region}.</p>
       {:else}
-        <p>{wordToBeGuessed} is the capital of {extraInfo.name}.</p>
+        <p>{wordToBeGuessed} is the capital of {extraInfo.name.common}.</p>
       {/if}
 
       <div class="buttons">

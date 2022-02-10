@@ -26,7 +26,7 @@
   const wordRandomizer = async () => {
     let testedWord;
 
-    const response = await fetch(`https://restcountries.eu/rest/v2/all`);
+    const response = await fetch(`https://restcountries.com/v3.1/all`);
     const countryList = await response.json();
 
     // this do/while searches new words until a good word is found
@@ -34,9 +34,9 @@
       rn = Math.floor(Math.random() * (countryList.length + 1 - 0)) + 0;
 
       if (coinflip === 1) {
-        testedWord = countryList[rn].name;
+        testedWord = countryList[rn].name.common;
       } else {
-        testedWord = countryList[rn].capital;
+        testedWord = countryList[rn].capital[0];
       }
     } while (
       // That regex tests the words for any letters or symbols that aren't used in the game
